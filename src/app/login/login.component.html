@@ -1,0 +1,61 @@
+<!-- <div class="main_div">
+  <div class="card">
+    <div class="heading">
+      <img src="../assets/image/logo.png" height="100%" class="login-logo">
+    </div>
+    <div class="display">
+      {{ tmp1 }}
+    </div>
+    <form name="frmlogin">
+      <div class="form-group cdiv">
+        <input type="text" placeholder="User Name" name="username" class="form-control control">
+      </div>
+      <div class="form-group cdiv">
+        <input type="password" placeholder="Password" name="Password" class="form-control control top">
+      </div>
+      <div class="footer">
+        <input type="submit" value="Login" class="btn btn-primary">
+      </div>
+    </form>
+  </div>
+</div> -->
+
+<div class="row main_div no-gutters">
+  <div class="card col-12 col-lg-6 col-md-10 col-sm-12 m-auto">
+    <div class="row">
+      <div class="col-12 col-lg-12 col-md-12 col-sm-12 heading">
+        <img src="../assets/image/logo.png" height="100%" class="login-logo">
+      </div>
+    </div>
+   
+    <form name="frmlogin" (keyup.enter)="checkuser(login_data)">
+      <div class="row">
+        <div class="col-12 col-lg-12 col-md-12 col-sm-12 input-group">
+          <!-- <input type="email" class="form-control control" placeholder="Username" [(ngModel)]="login_data.email_id" name="email"> -->
+          <mat-form-field class="control">
+              <input matInput [type]="'email'" placeholder="Enter Your Username" [(ngModel)]="login_data.email_id" name="email" class="logfield">
+              <span matPrefix>
+                  <i class="fa fa-user logicon"></i>&nbsp;&nbsp;
+              </span>
+            </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-12 col-md-12 col-sm-12 input-group top">
+          <!-- <input type="password" placeholder="Password" name="Password" class="form-control control" [(ngModel)]="login_data.password"> -->
+          <mat-form-field class="control">
+              <input matInput [type]="'password'" placeholder="Enter Your Password" [(ngModel)]="login_data.password" name="password" class="logfield">
+              <span matPrefix>
+                  <i class="fa fa-unlock-alt logicon"></i>&nbsp;&nbsp;
+              </span>
+            </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-12 col-md-12 col-sm-12 form-group footer">
+          <button mat-raised-button (click)="checkuser(login_data)" class="btn">Login</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

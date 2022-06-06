@@ -1,0 +1,68 @@
+/*
+    Navigation drawer using angular 4 animation
+    @author Shashank Tiwari
+*/
+
+.heading {
+    margin-top: 200px;
+}
+
+.navigation {
+    width: 260px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: #4A2E7E;
+    z-index: 3;
+    box-shadow: 0 0 3px black !important;
+    max-width: 260px;
+}
+
+.navigation ul {
+    padding-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 10%;
+    list-style-type: none;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.navigation li {
+    height: 5%;
+    width: 260px;
+    max-width: 260px;
+    padding: 10px 15px;
+    border-bottom: solid 0.5px rgba(255, 255, 255, 0.11);
+    cursor: pointer;
+    color: #fff;
+}
+
+.navigation li:hover {
+    background-color: rgba(177, 149, 229, 0.452);
+    color: #fff;
+    border-right: 4px solid #CEB3FF;
+}
+
+.drawer-logo {
+    background-color: white;
+    text-align: center;
+    font-weight: 900;
+    padding-bottom: 15px;
+}
+
+.m10 {
+    margin-right: 10px;
+}
+
+.logo {
+    border-radius: 10px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    height: 100px;
+}
+.activelink
+{
+    background-color: rgba(177, 149, 229, 0.452);
+    color: #fff;
+    border-right: 4px solid #CEB3FF;
+}

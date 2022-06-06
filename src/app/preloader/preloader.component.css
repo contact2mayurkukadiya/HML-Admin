@@ -1,0 +1,146 @@
+/* preloader */
+.preloader
+{
+  height: 100%;
+  width: 100%;
+}
+.spinner {
+    margin: auto;
+    width: 100px;
+    height: 60px;
+    text-align: center;
+    font-size: 10px;
+    /* background-color: red; */
+}
+.disable-select {
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+.spinner>div {
+    background-color: #333;
+    height: 100%;
+    width: 6px;
+    display: inline-block;
+    -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+    animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+p{
+  font-weight: 600;
+  text-align: center;
+  padding-top:5px;
+  margin:0px;
+}
+.spinner .rect1 {
+    background: #4A2E7E;
+    border-radius: 10px;
+    width: 4px;
+    -webkit-animation-delay: -1.1s;
+    animation-delay: -1.5s;
+}
+
+.spinner .rect2 {
+    background: #4A2E7E;
+    border-radius: 10px;
+    width: 4px;
+    -webkit-animation-delay: -1.2s;
+    animation-delay: -1.6s;
+}
+
+.spinner .rect3 {
+    background: #4A2E7E;
+    border-radius: 10px;
+    width: 4px;
+    -webkit-animation-delay: -1.3s;
+    animation-delay: -1.7s;
+}
+
+.spinner .rect4 {
+    background: #4A2E7E;
+    border-radius: 10px;
+    width: 4px;
+    -webkit-animation-delay: -1.4s;
+    animation-delay: -1.8s;
+}
+
+.spinner .rect5 {
+    -webkit-animation-delay: -0.8s;
+    border-radius: 10px;
+    width: 4px;
+    animation-delay: -0.7s;
+    background: #4A2E7E;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+    0%,
+    40%,
+    100% {
+        -webkit-transform: scaleY(0.4)
+    }
+    20% {
+        -webkit-transform: scaleY(1.0)
+    }
+}
+
+@keyframes sk-stretchdelay {
+    0%,
+    40%,
+    100% {
+        transform: scaleY(0.4);
+        -webkit-transform: scaleY(0.4);
+    }
+    20% {
+        transform: scaleY(1.0);
+        -webkit-transform: scaleY(1.0);
+    }
+}
+
+body {
+    color: #fff;
+    background: #000000;
+}
+
+@keyframes sk {
+    1% {
+        top: -15px;
+    }
+    2% {
+        top: 10px;
+    }
+    5% {
+        top: -20px;
+    }
+    10% {
+        left: -10px;
+    }
+    20% {
+        top: -25px;
+    }
+    30% {
+        left: 15px;
+        background: #4A2E7E;
+    }
+    35% {
+        top: 5px;
+    }
+    45% {
+        top: -5px;
+    }
+    50% {
+        top: -5px;
+    }
+    60% {
+        top: -6px;
+    }
+    70% {
+        top: 6px;
+    }
+    80% {
+        top: 6px;
+    }
+    60% {
+        top: -6px;
+    }
+}

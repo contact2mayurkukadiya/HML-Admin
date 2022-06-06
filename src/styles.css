@@ -1,0 +1,149 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+/* You can add global styles to this file, and also import other style files */
+
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    /* background-color: blueviolet !important; */
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.logicon {
+    font-size: 16px !important;
+}
+
+/* common css for all page header and navigation bar and body  */
+
+.header {
+    z-index: 5;
+    position: fixed;
+    width: 100%;
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+}
+
+.body {
+    height: calc(100% - 77px);
+    position: absolute;
+    width: 100%;
+    top: 77px;
+}
+
+.drawer {
+    position: fixed;
+    height: 100%;
+    max-width: 260px;
+    width: 260px;
+}
+
+.content {
+    min-height: 100%;
+    height: 100%;
+    padding: 15px;
+    width: calc(100% - 260px);
+    float: right;
+}
+
+/* comon css for header,navigation bar and body are finish here */
+
+.ucard {
+    transition: 0.3s;
+    padding: 0px !important;
+    overflow-y: auto;
+    max-height: calc(100% - 100px);
+}
+
+/* override material css's combo box css class */
+
+.mat-form-field-infix {
+    border: none;
+}
+
+.mat-select,
+.mat-select-arrow,
+.mat-select-placeholder,
+.mat-select-value-text,
+.mat-select:focus:not(.mat-select-disabled).mat-primary .mat-select-arrow,
+.mat-select:focus:not(.mat-select-disabled).mat-primary .mat-select-trigger .mat-input-underline .mat-form-field-underline {
+    color: white !important;
+    /* border-bottom:1px solid white; */
+}
+
+.mat-form-field-underline {
+    background-color: white;
+}
+
+.mat-form-field-ripple {
+    background-color: white;
+}
+
+/* override finish here */
+
+/* preloader dialog style overwrite  */
+
+.mat-dialog-container {
+    width: 150% !important;
+}
+
+.mat-dialog-container:hover {
+    cursor: default;
+}
+
+/* preloader dialog style finish here */
+
+.errsnakbar {
+    padding: 24px !important;
+    background: #BD362F;
+    border-radius: 5px !important;
+    top: 30px;
+    right: 15px;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 8px 10px -6px black;
+    user-select: none;
+    position: absolute;
+}
+.sucsnakbar
+{
+    background: #71B15A;
+}
+.page_links
+{
+    margin-top:10px;
+}
+.page_links .page-item.active .page-link
+{
+    background-color: #4A2E7E;
+    border-color:#4A2E7E;
+}
+.actioniconupdate
+{
+    font-size:25px !important;
+    color: #F0AD4E;
+}
+.actionicondelete
+{
+    font-size: 25px !important;
+    color: #DA5C58;
+}
+.hide{
+    display: none;
+}

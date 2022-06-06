@@ -1,0 +1,14 @@
+.header
+{
+     position: fixed;
+     z-index: 4;
+     width:100%;
+     box-shadow: 0 0 10px black;
+}
+.navigation
+{
+    margin-top:100px;
+    position: fixed;
+    left:0px;
+    height: 100%;
+}

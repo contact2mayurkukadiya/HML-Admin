@@ -1,0 +1,112 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+/* ::-webkit-scrollbar {
+    display: none;
+} */
+
+.thead-dark {
+    background-color: #B195E5;
+    color: white;
+    font-weight: 900;
+}
+
+.search_type_dropdown {
+    color: white;
+}
+
+/* .searchtype {
+    height: 35px;
+    margin-right: 10px;
+} */
+
+.search_control,
+.per_page {
+    width: 15%;
+    height: 35px;
+    margin-right: 10px;
+    float: left;
+}
+
+.per_page {
+    float: right;
+    width: 5%;
+    min-width: 70px;
+}
+
+.table {
+    width: 100%;
+    min-width: 1000px;
+}
+
+.options {
+    background-color: #875AD9;
+    color: white;
+    padding: 8px 0px;
+}
+
+.right_pan {
+    float: right;
+    width: 41%;
+}
+
+.search_box_control {
+    width: 20%;
+    min-width: 150px;
+    padding: 1px 10px;
+    margin-right: 1px;
+    height: 35px;
+    float: left;
+}
+
+.btnsearch {
+    width: 5%;
+    min-width: 45px;
+    height: 35px;
+    float: left;
+    cursor: pointer;
+    background-color: white !important;
+    border-color: white !important;
+    text-align: center !important;
+}
+
+.sort {
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+/* media query  */
+
+@media (max-width: 767px)
+/* for mobile phone */
+
+    {
+    .search_control {
+        display: none;
+    }
+    .search_box_control {
+        display: none;
+    }
+    .btnsearch {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width:1023px)
+/* for tablets*/
+
+    {
+    .search_control {
+        display: none;
+    }
+    .search_box_control {
+        display: none;
+    }
+    .btnsearch {
+        display: none;
+    }
+}

@@ -1,0 +1,126 @@
+<div class="header">
+  <app-header></app-header>
+</div>
+<div class="body">
+  <div class="drawer">
+    <app-navigation></app-navigation>
+  </div>
+  <div class="content">
+    <div class="row no-gutters options">
+      <div class="col-12 text-center font-weight-bold">
+        Total Sub Category : {{ total_record }}
+      </div>
+    </div>
+    <!-- row-->
+    <div class="row no-gutters">
+      <div class="col-12">
+        <button class="btn btn-default pluswallpaper" (click)="openfileuploader(content,'')">
+          <i class="fa fa-plus"></i> Sub Category
+        </button>
+      </div>
+    </div>
+
+    <mat-card class="ucard">
+      <div class="gallary" *ngFor="let item of data">
+        <img [src]="item.thumbnail_img" height="240px" width="240px">
+        <div class="text-center font-weight-bold p-3">{{ item.name }}</div>
+          <div class="alert alert-default btndelete actionicondelete text-center pb-5">
+            <i class="fa fa-trash" (click)="storesubcatid(item.sub_category_id)" data-toggle="modal" data-target="#exampleModalCenter"></i> &nbsp;&nbsp;&nbsp;
+            <i class="fa fa-pencil" (click)="openfileuploader(updatesubcat,item)"></i>
+          </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+<!-- delete sub category model -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Delete Wallpaper</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Do you want to delete permenently
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deletesubcategory(delete_sub_category_id)">Yes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- add sub category model -->
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">Add Sub Category</h5>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="main_control">
+      <div [ngClass]="{'upload-field' : true,'overlay' : url }">
+        <input type="file" id="uploadFileInput" name="image" (change)="handleFileInput($event.target.files)" />
+        <div class="upload_icon">
+          <i class="fa fa-camera"></i>
+        </div>
+      </div>
+      <div class="imagepreview">
+        <img [src]="url" *ngIf="url" class="selectedimage">
+      </div>
+    </div>
+    <div class="row no-gutters justify-content-center pt-3 pb-3 pl-5 pr-5">
+      <div class="col-2 m-auto">
+        Name :
+      </div>
+      <div class="col m-auto">
+        <input type="text" class="form-control" placeholder="Enter Sub Category Name" name="subcatname" [(ngModel)]="subcatname">
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="addsubcategory()">Add</button>
+    <!-- <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button> -->
+  </div>
+</ng-template>
+
+<ng-template #updatesubcat let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Update Sub Category</h5>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="main_control">
+        <div [ngClass]="{'upload-field' : true,'overlay' : url }">
+          <input type="file" id="uploadFileInput" name="image" (change)="handleFileInput($event.target.files)" />
+          <div class="upload_icon">
+            <i class="fa fa-camera"></i>
+          </div>
+        </div>
+        <div class="imagepreview">
+          <img [src]="url" *ngIf="url" class="selectedimage">
+        </div>
+      </div>
+      <div class="row no-gutters justify-content-center pt-3 pb-3 pl-5 pr-5">
+        <div class="col-2 m-auto">
+          Name :
+        </div>
+        <div class="col m-auto">
+          <input type="text" class="form-control" placeholder="Enter Sub Category Name" name="subcatname" [(ngModel)]="subcatname">
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="c('Close click')">Cancel</button>
+      <button type="button" class="btn btn-primary" (click)="updatesubcategory()">Update</button>
+      <!-- <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button> -->
+    </div>
+  </ng-template>
+  

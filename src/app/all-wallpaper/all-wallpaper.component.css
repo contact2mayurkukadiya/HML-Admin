@@ -1,0 +1,115 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+.options {
+    background-color: #875AD9;
+    color: white;
+    padding: 8px 0px;
+}
+
+.pluswallpaper {
+    background-color: #4A2E7E;
+    font-weight: 500;
+    color: white;
+    float: right;
+    font-family: verdana;
+    margin: 10px 0px;
+    border-color: #4A2E7E;
+}
+
+.gallary {
+    float: left;
+    margin: 10px;
+}
+
+.btndelete {
+    height: 45px;
+    background-color: #875AD9;
+    border-color: #875AD9;
+    border-radius: 0px !important;
+    width: 100%;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* file upload custome css */
+
+.main_control {
+    height: 150px;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    border-radius: 5px;
+}
+
+input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.upload-field {
+    position: relative;
+    cursor: pointer;
+    height: 150px;
+    z-index: 500;
+    line-height: 28px;
+    border: 1px solid rgb(104, 104, 104);
+    border-radius: 5px;
+    background-color: gainsboro;
+}
+
+.upload_icon {
+    font-size: 100%;
+    color: rgba(202, 202, 202, 0.897)(128, 128, 128, 0.794);
+    text-align: center;
+    position: absolute;
+    font-size: 58px;
+    top: 50%;
+    left: 50%;
+    z-index: 500;
+    transform: translate(-50%, -50%);
+}
+
+.selectedimage {
+    height: 100%;
+    width: 100%;
+}
+
+.imagepreview {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    z-index: 0;
+    border-radius:5px;
+}
+
+.overlay {
+    opacity: 0;
+}
+
+.overlay:hover {
+    opacity: 0.5;
+}
+
+.mat-card-content>:first-child,
+.mat-card>:first-child {
+    margin: 10px;
+}
+
+@media (max-width: 767px)
+/* for mobile phone */
+
+{}
+
+@media (min-width: 768px) and (max-width:1023px)
+/* for tablets*/
+
+{}

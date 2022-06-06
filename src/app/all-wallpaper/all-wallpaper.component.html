@@ -1,0 +1,86 @@
+<div class="header">
+  <app-header></app-header>
+</div>
+<div class="body">
+  <div class="drawer">
+    <app-navigation></app-navigation>
+  </div>
+  <div class="content">
+    <div class="row no-gutters options">
+      <div class="col-12 text-center font-weight-bold">
+        Total Wallpapers : {{ total_wallpaper }}
+      </div>
+    </div>
+    <!-- row-->
+    <div class="row no-gutters">
+      <div class="col-12">
+        <button class="btn btn-default pluswallpaper" (click)="openfileuploader(content)">
+          <i class="fa fa-plus"></i> Wallpaper
+        </button>
+      </div>
+    </div>
+
+    <mat-card class="ucard">
+      <div class="gallary" *ngFor="let item of data">
+        <img [src]="item.thumbnail_image" height="415px" width="232px">
+        <p>
+          <button class="btn btn-default btndelete actionicondelete" [id]="item.wallpaper_id" (click)="storewallpaperid(item.wallpaper_id)"
+            data-toggle="modal" data-target="#exampleModalCenter">
+            <i class="fa fa-trash"></i>
+          </button>
+        </p>
+      </div>
+    </mat-card>
+
+    <ngb-pagination [collectionSize]="total_wallpaper" [pageSize]="per_page" [(page)]="page" [directionLinks]="true" (pageChange)="displayData(per_page,page)"
+      class="pull-right mt-5"></ngb-pagination>
+  </div>
+</div>
+
+<!-- delete wallpaper model -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Delete Wallpaper</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Do you want to delete permenently
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="deletewallpaper(delete_wallpaper_id)">Yes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- add wallpaper model -->
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Wallpaper</h5>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    <div class="modal-body">
+        <div class="main_control">
+            <div [ngClass]="{'upload-field' : true,'overlay' : url }">
+              <input type="file" id="uploadFileInput" name="image" (change)="handleFileInput($event.target.files)" />
+              <div class="upload_icon">
+                <i class="fa fa-camera"></i>
+              </div>
+            </div>
+            <div class="imagepreview">
+              <img [src]="url" *ngIf="url" class="selectedimage">
+            </div>
+          </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  (click)="c('Close click')">Cancel</button>
+        <button type="button" class="btn btn-primary" (click)="uploadFileToActivity()">Add</button>
+      <!-- <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">Close</button> -->
+    </div>
+  </ng-template>

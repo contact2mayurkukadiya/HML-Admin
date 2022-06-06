@@ -1,0 +1,103 @@
+<div class="header">
+    <app-header></app-header>
+  </div>
+  <div class="body">
+    <div class="drawer">
+      <app-navigation></app-navigation>
+    </div>
+    <div class="content">
+      <div class="row no-gutters options">
+        <div class="col pl-2 pr-2">
+  
+          <mat-form-field class="search_control" matTooltip="Select Search Type" mattooltipposition="below">
+            <mat-select [(value)]='search_type' class="search_type_dropdown">
+              <mat-option value="">Search Type</mat-option>
+              <mat-option *ngFor="let option of searchType" [value]="option.key">{{ option.value }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+  
+          <input type="text" class="form-control search_box_control" name="searchquery" [(ngModel)]="searchqry" placeholder="Search Query..."
+            (keyup.enter)="searchuser(search_type,searchqry)">
+          <button class="btn btn-default btnsearch" (click)="searchuser(search_type,searchqry)" matTooltip="Search" mattooltipposition="below">
+            <i class="fa fa-search"></i>
+          </button>
+          <button class="btn btn-default btnsearch ml-3" (click)="reset()" matTooltip="Reset" mattooltipposition="below">
+            <i class="fa fa-refresh"></i>
+          </button>
+  
+          <span class="pull-right">Users : {{ total_record }}</span>
+          <mat-form-field [ngClass]="{'per_page' : true ,'hide': search == true }" matTooltip="Select Item Per Page" mattooltipposition="below"
+            name="pagecontrol">
+            <mat-select [(value)]='per_page' class="search_type_dropdown" (change)="displayData(per_page)">
+              <mat-option *ngFor="let option of perPage" [value]="option">{{ option }}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- row-->
+  
+      <mat-card class="ucard">
+        <!-- <table class="table table-hover" *ngIf="data.length != 0"> -->
+  
+        <table class="table table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th>#</th>
+              <th>
+                <span matTooltip="Sort by Name" class="sort" (click)="displayData(per_page,'user_name',order)" mattooltipposition="below">Name &nbsp;&nbsp;
+                  <i class="fa fa-sort"></i>
+                </span>
+              </th>
+              <th>
+                <span matTooltip="Sort by Email Id" class="sort" mattooltipposition="below" (click)="displayData(per_page,'email_id',order)">Email ID &nbsp;&nbsp;
+                  <i class="fa fa-sort"></i>
+                </span>
+              </th>
+              <th class="text-center">
+                <span matTooltip="Sort by Phone No" class="sort" mattooltipposition="below" (click)="displayData(per_page,'phone_no',order)">Phone No &nbsp;&nbsp;
+                  <i class="fa fa-sort"></i>
+                </span>
+              </th>
+              <th class="text-center">
+                <span matTooltip="Sort by Gender" class="sort" mattooltipposition="below" (click)="displayData(per_page,'gender',order)">Gender &nbsp;&nbsp;
+                  <i class="fa fa-sort"></i>
+                </span>
+              </th>
+              <th class="text-center">
+                <span matTooltip="Sort by Signup Type" class="sort" mattooltipposition="below" (click)="displayData(per_page,'signup_type',order)">Signup By &nbsp;&nbsp;
+                  <i class="fa fa-sort"></i>
+                </span>
+              </th>
+              <th class="text-center">
+                <span matTooltip="Sort by Siognup Time" class="sort" mattooltipposition="below" (click)="displayData(per_page,'create_time',order)">Signup Time &nbsp;&nbsp;
+                  <i class="fa fa-sort"></i>
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="error != null">
+              <td colspan="7">{{ error }}</td>
+            </tr>
+            <tr *ngFor="let row of data">
+              <td>{{ row.user_id }}</td>
+              <td>{{ row.user_name }}</td>
+              <td>{{ row.email_id }}</td>
+  
+              <td class="text-center">{{ row.phone_no }}</td>
+  
+              <td *ngIf="row.gender == 1" class="text-center">Male</td>
+              <td *ngIf="row.gender == 0" class="text-center">female</td>
+              <td *ngIf="row.signup_type == 1" class="text-center">E-mail</td>
+              <td *ngIf="row.signup_type == 2" class="text-center">Facebook</td>
+              <td class="text-center">{{ row.create_time | date:'yyyy-MM-dd h:mm:ss a' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </mat-card>
+      
+        <ngb-pagination [collectionSize]="total_record" [pageSize] = "per_page" [(page)]="page" [directionLinks]="true" (pageChange)="displayData(per_page,'user_name',order,page)" [ngClass]="{'pull-right': true , 'page_links' : true,'hide' : search == true || total_record <= per_page}"></ngb-pagination>
+      
+    </div>
+  </div>
+  

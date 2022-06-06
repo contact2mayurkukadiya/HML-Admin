@@ -1,0 +1,100 @@
+.main_div {
+    height: 100%;
+    background-color: #4A2E7E;
+    position: relative;
+}
+
+.card {
+    width: 600px;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    box-shadow: 0px 0px 10px black;
+    padding: 30px 10px;
+    transform: translate(-50%, -50%);
+    word-wrap: break-word;
+}
+
+.heading {
+    height: 150px;
+    margin-top: 25px;
+    color: black;
+    text-align: center;
+}
+
+.login-logo {
+    border-radius: 10px;
+    height: 120px;
+    width: 120px;
+}
+
+
+.control {
+    height: 40px;
+    width: 100%;
+    border: 0px solid gray;
+    border-bottom: 2px solid gray;
+    border-radius: 0px;
+    padding: 5px;
+    padding-top: 0px;
+    margin: 10px;
+    font-size: 14px;
+    
+}
+
+.control:focus {
+    border-bottom-color: #373F46;
+}
+
+.top {
+    margin-top: 0px;
+}
+
+.footer {
+    margin-top: 35px;
+    text-align: center;
+}
+
+.btn {
+    background-color: #875AD9;
+    border-color: #875AD9;
+    width: 160px;
+    border-radius: 3px;
+    height: 45px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.52);
+}
+
+.btn:hover {
+    background-color: rgb(108, 54, 208);
+    cursor: pointer;
+}
+
+.input-group {
+    padding: 0px 80px;
+}
+.logfield
+{
+    color: balck;
+}
+/* media query */
+
+@media (max-width: 767px)
+/* for mobile phone */
+
+    {
+    .input-group {
+        padding: 0px 20px;
+    }
+}
+
+@media (min-width: 600px) and (max-width:1024px)
+/* for tablets*/
+
+    {
+    .input-group {
+        padding: 0px 40px;
+    }
+}
